@@ -1,0 +1,37 @@
+.quiz-app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.question-section {
+  margin-bottom: 20px;
+}
+
+.answer-section button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.answer-section button:hover {
+  background-color: #ccc;
+}
+
+.answer-section button.selected {
+  background-color: #87ceeb;
+}
+
+.feedback-section {
+  margin-top: 20px;
+}
+
+.score-section {
+  margin-top: 20px;
+  font-weight: bold;
+}

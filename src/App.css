@@ -1,0 +1,266 @@
+/* General reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #4b0076, #260051);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Padding for small screens */
+}
+
+.quiz-app {
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  background: #260051;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  color: white;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Title */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  transition: font-size 0.3s ease;
+}
+
+/* Question container */
+.question-container {
+  margin-top: 20px;
+}
+
+.question-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #a7f3d0; /* Light green for question title */
+  transition: font-size 0.3s ease;
+}
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #d6baff;
+  transition: font-size 0.3s ease;
+}
+
+/* Answers container */
+.answers-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Answer buttons */
+.answer-button {
+  padding: 14px 20px;
+  border-radius: 40px;
+  background-color: #6a00c4;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, transform 0.3s, padding 0.3s ease;
+}
+
+.answer-button:hover {
+  background-color: #53009f;
+  transform: translateY(-3px);
+}
+
+.answer-button.selected {
+  background-color: #b800ff;
+}
+
+.answer-button.correct {
+  background-color: #4caf50; /* Correct answers in green */
+}
+
+.answer-button.incorrect {
+  background-color: #ff6347; /* Incorrect answers in red */
+}
+
+/* Feedback container */
+.feedback-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-button {
+  background-color: #00c7d8;
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s, padding 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #00a0af;
+  transform: translateY(-3px);
+}
+
+/* Loading and error styles */
+.loading,
+.error {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Timer bar */
+.timer-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #00c7d8;
+  animation: timer 3s linear forwards;
+  margin-top: 20px;
+}
+
+@keyframes timer {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Custom shape for decoration */
+.shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.shape.shape-1 {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  right: -30px;
+}
+
+.shape.shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  left: -50px;
+}
+
+/* Responsive styles */
+
+/* Tablet and medium screens */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .quiz-app {
+    padding: 30px;
+    box-shadow: none; /* Reduce shadow on smaller screens */
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .question-title {
+    font-size: 18px;
+  }
+
+  .question-text {
+    font-size: 16px;
+  }
+
+  .answer-button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .next-button {
+    padding: 8px 18px;
+    font-size: 16px;
+  }
+
+  .shape.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    right: -20px;
+  }
+
+  .shape.shape-2 {
+    width: 120px;
+    height: 120px;
+    bottom: -40px;
+    left: -40px;
+  }
+}
+
+/* Mobile and small screens */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .quiz-app {
+    padding: 20px;
+    border-radius: 15px; /* Smaller border radius on mobile */
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .question-title {
+    font-size: 16px;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+
+  .answer-button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .next-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .shape.shape-1 {
+    width: 60px;
+    height: 60px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .shape.shape-2 {
+    width: 100px;
+    height: 100px;
+    bottom: -30px;
+    left: -30px;
+  }
+}
